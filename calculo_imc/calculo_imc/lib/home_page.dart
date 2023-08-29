@@ -153,21 +153,19 @@ class _HomePageState extends State<HomePage> {
                             .replaceAll(",", ".")
                             .replaceAll(" ", ""));
 
-                        double imc;
-
-                        imc = weight / (height * height);
+                        double imc = weight / (height * height);
                         double imcSaver = 0;
 
-                        if (imc > 24.9) {
+                        if (imc > 25) {
                           imcSaver = imc - 24.9;
-                        } else if (imc < 18.6) {
+                        } else if (imc <= 18.5) {
                           imcSaver = 18.6 - imc;
                         }
 
-                        double deltaWeight =
-                            (imcSaver * height * height).floorToDouble();
+                        String deltaWeight =
+                            (imcSaver * height * height).toStringAsPrecision(3);
 
-                        double roundedImc = imc.roundToDouble();
+                        String roundedImc = (imc).toStringAsPrecision(4);
 
                         if (height > 0 && weight > 0) {
                           setState(() {
