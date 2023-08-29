@@ -195,7 +195,7 @@ class _HomePageState extends State<HomePage> {
                         } else {
                           setState(() {
                             _result =
-                                "Hahaha... Altura ou peso negativos? Quem você pensa que é amigo? Albert Einstein? Isaac Newton? Eu acho que NÃO!!!";
+                                "Hahaha.... Altura ou peso negativos? Quem você pensa que é amigo? Albert Einstein? Isaac Newton? Eu acho que NÃO!!!";
                           });
                         }
                       },
