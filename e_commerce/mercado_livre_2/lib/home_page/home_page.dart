@@ -39,39 +39,40 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           SizedBox(
-              width: 200,
-              height: 48,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor:
-                      Appearence.getData(JuiceThemeData.primaryColor),
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(30),
-                    ),
+            width: 200,
+            height: 48,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor:
+                    Appearence.getData(JuiceThemeData.primaryColor),
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(30),
                   ),
                 ),
-                onPressed: () {
-                  setState(
-                    () {
-                      Navigator.pushReplacement(
-                        context,
-                        CupertinoPageRoute(
-                          builder: (BuildContext context) {
-                            return const AdsPage();
-                          },
-                        ),
-                      );
-                    },
-                  );
-                },
-                child: Text(
-                  "Entrar",
-                  style: TextStyle(
-                    color: Appearence.getData(JuiceThemeData.textColor),
-                  ),
+              ),
+              onPressed: () {
+                setState(
+                  () {
+                    Navigator.pushReplacement(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (BuildContext context) {
+                          return const AdsPage();
+                        },
+                      ),
+                    );
+                  },
+                );
+              },
+              child: Text(
+                "Entrar",
+                style: TextStyle(
+                  color: Appearence.getData(JuiceThemeData.textColor),
                 ),
-              ))
+              ),
+            ),
+          )
         ],
       ),
     );

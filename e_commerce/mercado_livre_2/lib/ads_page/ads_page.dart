@@ -25,56 +25,61 @@ class AdsPageState extends State<AdsPage> {
 
     return Scaffold(
       appBar: header,
-      body: ListView.builder(
-        itemCount: ads.length,
-        itemBuilder: (context, index) {
-          return Slidable(
-            startActionPane: ActionPane(
-              motion: const ScrollMotion(),
-              dismissible: DismissiblePane(
-                onDismissed: () {
-                  setState(
-                    () {
-                      ads.remove(ads[index]);
-                    },
-                  );
-                },
-              ),
-              children: [
-                SlidableAction(
-                  onPressed: (BuildContext context) {
-                    setState(
-                      () {
-                        AdEditorState.isNewAd = false;
-                        AdEditorState.loadEditorState(
-                            ads[index].name,
-                            ads[index].price.toString(),
-                            ads[index].attributes[0],
-                            index);
-                      },
-                    );
-
-                    Navigator.pushReplacement(
-                      context,
-                      CupertinoPageRoute(
-                        builder: (BuildContext context) {
-                          return AdEditor("", "", "");
+      body: Center(
+        child: SizedBox(
+          child: ListView.builder(
+            itemCount: ads.length,
+            itemBuilder: (context, index) {
+              return Slidable(
+                startActionPane: ActionPane(
+                  motion: const ScrollMotion(),
+                  dismissible: DismissiblePane(
+                    onDismissed: () {
+                      setState(
+                        () {
+                          ads.remove(ads[index]);
                         },
-                      ),
-                    );
-                  },
-                  backgroundColor:
-                      Appearence.getData(JuiceThemeData.primaryColor),
-                  foregroundColor: Appearence.getData(JuiceThemeData.textColor),
-                  icon: Icons.mode_edit_rounded,
-                  label: 'Edit',
+                      );
+                    },
+                  ),
+                  children: [
+                    SlidableAction(
+                      onPressed: (BuildContext context) {
+                        setState(
+                          () {
+                            AdEditorState.isNewAd = false;
+                            AdEditorState.loadEditorState(
+                                ads[index].name,
+                                ads[index].price.toString(),
+                                ads[index].attributes[0],
+                                index);
+                          },
+                        );
+
+                        Navigator.pushReplacement(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (BuildContext context) {
+                              return AdEditor("", "", "");
+                            },
+                          ),
+                        );
+                      },
+                      backgroundColor:
+                          Appearence.getData(JuiceThemeData.primaryColor),
+                      foregroundColor:
+                          Appearence.getData(JuiceThemeData.textColor),
+                      icon: Icons.mode_edit_rounded,
+                      label: 'Edit',
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            key: Key(ads[index].name),
-            child: ads[index],
-          );
-        },
+                key: Key(ads[index].name),
+                child: ads[index],
+              );
+            },
+          ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Appearence.getData(JuiceThemeData.primaryColor),
