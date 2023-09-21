@@ -1,7 +1,7 @@
-import 'package:dgust_aplication/models/generic_category_model.dart';
-import 'package:dgust_aplication/models/pizzas_models/classification_menu_item_model.dart';
-import 'package:dgust_aplication/models/pizzas_models/edge_model.dart';
-import 'package:dgust_aplication/models/pizzas_models/flavor_mode.dart';
+import 'package:dgust_aplication/models/generic/generic_category_model.dart';
+import 'package:dgust_aplication/models/pizzas_models/pizza_menu_item.dart';
+import 'package:dgust_aplication/models/pizza_parts_models/edge_model.dart';
+import 'package:dgust_aplication/models/pizza_parts_models/flavor_model.dart';
 
 class PizzaCategoryModel extends GenericCategory {
   late final List<Edge> edges;
@@ -10,15 +10,19 @@ class PizzaCategoryModel extends GenericCategory {
   PizzaCategoryModel()
       : super.create(name: '', id: 0, menuItems: null, description: "");
 
-  PizzaCategoryModel.create(
-      {required id,
-      required name,
-      required menuItems,
-      required this.edges,
-      description,
-      required this.flavors})
-      : super.create(
-            name: name, id: id, menuItems: menuItems, description: description);
+  PizzaCategoryModel.create({
+    required id,
+    required name,
+    required menuItems,
+    required this.edges,
+    description,
+    required this.flavors,
+  }) : super.create(
+          name: name,
+          id: id,
+          menuItems: menuItems,
+          description: description,
+        );
   static List<PizzaCategoryModel> categories = [
     PizzaCategoryModel.create(
         id: 1,

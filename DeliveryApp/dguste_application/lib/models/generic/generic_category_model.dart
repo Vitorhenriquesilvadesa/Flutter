@@ -1,4 +1,4 @@
-import 'package:dgust_aplication/models/pizzas_models/category_pizza_model.dart';
+import 'package:dgust_aplication/models/pizzas_models/pizza_category_model.dart';
 
 import 'generic_menu_item_model.dart';
 

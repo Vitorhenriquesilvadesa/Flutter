@@ -5,6 +5,7 @@ class PizzaMenuCategoryBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<PizzaMenuCategoryController>(
-        () => PizzaMenuCategoryController());
+      () => PizzaMenuCategoryController(),
+    );
   }
 }
