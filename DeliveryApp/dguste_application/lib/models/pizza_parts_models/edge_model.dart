@@ -1,45 +1,45 @@
-import 'package:dgust_aplication/controllers/general_id.dart';
+/*
+ Não podera Extender de GenericModel devido seu id ser uma String, discutir solução com vitim!
+ */
 
-import 'edge_price.dart';
+import '../../controllers/general_id.dart';
 
-class Edge with Identificable {
-  late final int id;
+class EdgeModel with Identificable {
+  late final String id; //PrimaryKey
   late final int categoryId;
   late final String name;
-  late final List<EdgePrice> prices;
-  Edge(
+  late final double price;
+
+  EdgeModel(
       {required this.id,
       required this.name,
       required this.categoryId,
-      required this.prices});
-  static List<Edge> edges = [
-    Edge(
-        id: 1,
-        categoryId: 1,
-        name: "Cheddar",
-        prices: EdgePrice.edgesPrices
-            .where((edgePrice) => edgePrice.idEdge == 1)
-            .toList()),
-    Edge(
-        id: 2,
-        categoryId: 1,
-        name: "Chocolate",
-        prices: EdgePrice.edgesPrices
-            .where((edgePrice) => edgePrice.idEdge == 2)
-            .toList()),
-    Edge(
-        id: 3,
-        categoryId: 2,
-        name: "Chocolate",
-        prices: EdgePrice.edgesPrices
-            .where((edgePrice) => edgePrice.idEdge == 1)
-            .toList()),
-    Edge(
-        id: 4,
-        categoryId: 2,
-        name: "Chocolate Branco",
-        prices: EdgePrice.edgesPrices
-            .where((edgePrice) => edgePrice.idEdge == 2)
-            .toList()),
+      required this.price});
+
+  static List<EdgeModel> edges = [
+    EdgeModel(
+      id: "Chedar_M",
+      categoryId: 1,
+      name: "Cheddar",
+      price: 5.00,
+    ),
+    EdgeModel(
+      id: "Chocolate_G",
+      categoryId: 1,
+      name: "Chocolate",
+      price: 4.00,
+    ),
+    EdgeModel(
+      id: "Chocolate_B",
+      categoryId: 1,
+      name: "Chocolate",
+      price: 5.00,
+    ),
+    EdgeModel(
+      id: "Chocolate_P",
+      categoryId: 1,
+      name: "Chocolate Branco",
+      price: 6.00,
+    )
   ];
 }

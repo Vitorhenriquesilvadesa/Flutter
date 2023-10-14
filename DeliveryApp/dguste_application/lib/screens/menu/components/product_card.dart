@@ -16,9 +16,8 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       shape: RoundedRectangleBorder(
-        side: const BorderSide(width: 0.5),
-        borderRadius: BorderRadius.circular(15),
-      ),
+          side: const BorderSide(width: 0.5),
+          borderRadius: BorderRadius.circular(15)),
       contentPadding: const EdgeInsets.symmetric(horizontal: 5),
       title: Text(name),
       subtitle: Text(description),
@@ -30,12 +29,7 @@ class ProductCard extends StatelessWidget {
       trailing: const Row(
         mainAxisAlignment: MainAxisAlignment.end,
         mainAxisSize: MainAxisSize.min,
-        children: [
-          IconButton(
-            onPressed: null,
-            icon: Icon(Icons.add_circle),
-          ),
-        ],
+        children: [IconButton(onPressed: null, icon: Icon(Icons.add_circle))],
       ),
       onTap: onChanged,
     );

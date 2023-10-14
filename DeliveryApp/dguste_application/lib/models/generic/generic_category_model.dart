@@ -1,20 +1,13 @@
-import 'package:dgust_aplication/models/pizzas_models/pizza_category_model.dart';
+import 'package:dgust_aplication/models/generic/generic_model.dart';
 
-import 'generic_menu_item_model.dart';
-
-abstract class GenericCategory {
-  int id;
-  String name;
+abstract class GenericCategoryModel extends GenericModel {
   // late Image image;
-  List<GenericMenuItem>? menuItems; //alterar
-  String description;
 
-  static List<GenericCategory> categories =
-      List.of(PizzaCategoryModel.categories);
+  late final String description;
 
-  GenericCategory.create(
-      {required this.name,
-      required this.id,
-      required this.menuItems,
+  GenericCategoryModel(
+      {required super.id,
+      required super.name,
+      required super.categoryId,
       required this.description});
 }
