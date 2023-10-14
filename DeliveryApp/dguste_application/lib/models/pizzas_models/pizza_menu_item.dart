@@ -1,55 +1,64 @@
-import 'package:dgust_aplication/models/generic/generic_menu_item_model.dart';
+/*
+ Acho que depois devemos trocar esse nome "Menu Item" para algo mais adequado  
+*/
+import 'package:flutter/foundation.dart';
 
-class PizzaMenuItem extends DescriptableMenuItem {
+import '../generic/generic_menu_item_model.dart';
+
+class PizzaMenuItemModel extends DescriptableMenuItemModel {
   late final int quantityPiece;
   late final int quantityFlavor;
+  late final double price;
 
-  PizzaMenuItem({
-    required super.id,
-    required super.categoryId,
-    required super.classification,
-    required this.quantityPiece,
-    required this.quantityFlavor,
-    required super.description,
-    required super.isAvailable,
-  });
+  PizzaMenuItemModel(
+      {required super.id,
+      required super.categoryId,
+      required super.variation,
+      required this.quantityPiece,
+      required this.quantityFlavor,
+      required super.description,
+      required this.price});
 
-  static List<PizzaMenuItem> pizzaMenuItems = [
-    PizzaMenuItem(
+  static List<PizzaMenuItemModel> pizzaMenuItems = [
+    PizzaMenuItemModel(
       id: 1,
       categoryId: 1,
-      classification: "Pequeno (P)",
+      variation: "Pequeno (P)",
       quantityFlavor: 1,
       quantityPiece: 4,
       description: "Pizza 4 pdçs e 2 sabores",
-      isAvailable: true,
+      price: 35.00,
     ),
-    PizzaMenuItem(
+    PizzaMenuItemModel(
       id: 2,
       categoryId: 1,
-      classification: "Media (M)",
+      variation: "Media (M)",
       quantityFlavor: 2,
       quantityPiece: 6,
       description: "Pizza 6 pdçs e 1 sabores",
-      isAvailable: true,
+      price: 52.00,
     ),
-    PizzaMenuItem(
+    PizzaMenuItemModel(
       id: 3,
       categoryId: 2,
-      classification: "Brotinho (B)",
+      variation: "Brotinho (B)",
       quantityFlavor: 1,
       quantityPiece: 4,
       description: "Pizza brotinho 1 sabor",
-      isAvailable: true,
+      price: 10.00,
     ),
-    PizzaMenuItem(
+    PizzaMenuItemModel(
       id: 4,
       categoryId: 2,
-      classification: "Pequena (P)",
+      variation: "Pequena (P)",
       quantityFlavor: 1,
       quantityPiece: 4,
       description: "Pizza 4 pdçs e 1 sabores",
-      isAvailable: true,
+      price: 35.00,
     ),
   ];
+}
+
+void main(List<String> args) {
+  debugPrint(PizzaMenuItemModel.pizzaMenuItems.toString());
 }

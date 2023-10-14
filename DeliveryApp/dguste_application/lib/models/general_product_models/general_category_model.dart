@@ -1,22 +1,20 @@
-import 'package:dgust_aplication/models/generic_category_model.dart';
+/*
+  vale lembrar GeneralProductCategoryModel não tem nenhuma diferença de GenericCategoryModel
+  detalhei melhor isso em PizzaCategoryModel 
+*/
 
-import 'menu_item_model.dart';
+import '../generic/generic_category_model.dart';
 
-class ProductCategoryModel extends GenericCategory {
-  //Equatablle
+class GeneralProductCategoryModel extends GenericCategoryModel {
+  GeneralProductCategoryModel(
+      {required super.id, required super.name, required super.description})
+      : super(categoryId: id); // corigindo a questão categoryId
 
-  ProductCategoryModel()
-      : super.create(name: '', id: 0, menuItems: null, description: "");
-
-  ProductCategoryModel.create({required name, required id, required menuItems})
-      : super.create(name: name, id: id, menuItems: menuItems, description: "");
-
-  static List<ProductCategoryModel> categories = [
-    ProductCategoryModel.create(
-        name: "Bebidas",
-        id: 2,
-        menuItems: DrinkMenuItem.menuItems
-            .where((menuItem) => menuItem.categoryId == 2)
-            .toList()),
+  static List<GeneralProductCategoryModel> categories = [
+    GeneralProductCategoryModel(
+      id: 3,
+      name: "Categoria Geral 1",
+      description: "Essa e uma categoria geral",
+    )
   ];
 }
