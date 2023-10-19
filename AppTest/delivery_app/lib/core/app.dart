@@ -1,4 +1,4 @@
-import 'package:delivery_app/pages/home_page.dart';
+import 'package:delivery_app/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 class FoodApp extends StatelessWidget {

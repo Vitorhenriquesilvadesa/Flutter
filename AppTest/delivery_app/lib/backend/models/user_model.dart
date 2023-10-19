@@ -63,5 +63,3 @@ class User extends GenericEntity {
     };
   }
 }
-
-List<User> users = [];
